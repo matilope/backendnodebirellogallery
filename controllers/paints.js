@@ -113,7 +113,7 @@ var controller = {
 
     getPinturas: (req, res) => {
 
-        var query = Pintura.find({rand: {$gte:rand()}});
+        var query = Pintura.findRandom({});
 
         var last = req.params.last;
         if (last || last != undefined) {
@@ -122,6 +122,8 @@ var controller = {
 
         // Find
         query.sort("-_id").exec((err, paints) => {
+
+         var random = Math.floor(Math.random() * paints)
 
             if (err) {
                 return res.status(500).send({
@@ -242,7 +244,7 @@ var controller = {
 
         });
     },
-    
+
     create: async (req, res) => {
 
         var pinturaId = req.params.id;
