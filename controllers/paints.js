@@ -8,6 +8,8 @@ cloudinary.config({ cloud_name: 'hpvfpmikj', api_key: '465624419968993', api_sec
 
 var random = require('mongoose-simple-random');
 
+Pintura.plugin(random);
+
 var controller = {
 
     save: (req, res) => {
