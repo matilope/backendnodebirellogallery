@@ -6,6 +6,8 @@ var cloudinary = require("cloudinary").v2;
 
 cloudinary.config({ cloud_name: 'hpvfpmikj', api_key: '465624419968993', api_secret: 'MysoeF7TCI41WHCaE5bpPmthM9E' });
 
+var random = require('mongoose-simple-random');
+
 var controller = {
 
     save: (req, res) => {
