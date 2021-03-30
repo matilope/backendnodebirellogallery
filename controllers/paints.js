@@ -113,7 +113,7 @@ var controller = {
 
     getPinturas: (req, res) => {
 
-        var query = Pintura.find({rand: rand()});
+        var query = Pintura.find({rand: {$gte:rand()}});
 
         var last = req.params.last;
         if (last || last != undefined) {
