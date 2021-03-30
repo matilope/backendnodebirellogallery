@@ -6,9 +6,6 @@ var cloudinary = require("cloudinary").v2;
 
 cloudinary.config({ cloud_name: 'hpvfpmikj', api_key: '465624419968993', api_secret: 'MysoeF7TCI41WHCaE5bpPmthM9E' });
 
-var random = require('mongoose-simple-random');
-
-Pintura.plugin(random);
 
 var controller = {
 
@@ -117,7 +114,7 @@ var controller = {
 
     getPinturas: (req, res) => {
 
-        var query = Pintura.findRandom({});
+        var query = Pintura.find({});
 
         var last = req.params.last;
         if (last || last != undefined) {
@@ -126,8 +123,6 @@ var controller = {
 
         // Find
         query.sort("-_id").exec((err, paints) => {
-
-         var random = Math.floor(Math.random() * paints)
 
             if (err) {
                 return res.status(500).send({
