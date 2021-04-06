@@ -3,7 +3,7 @@ const app = require("./app");
 
 mongoose.set("useFindAndModify", false)
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb+srv://instructorusername76:H5JOcZ4R6jJiPnHD@birellogallerydb.rig3k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://instructorusername76:H5JOcZ4R6jJiPnHD@birellogallerydb.rig3k.mongodb.net/birellogallerydb?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
