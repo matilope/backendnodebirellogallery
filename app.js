@@ -27,7 +27,18 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(cors());
+var whitelist = ['http://birellogallery.com', 'https://birellogallery.com', 'https://backbirellogallery.herokuapp.com', 'https://birellogallery.herokuapp.com']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+app.use(cors(corsOptions));
 
 // Routes section
 
