@@ -262,7 +262,6 @@ var controller = {
 
         var array = [];
 
-
         for (let i = 0; i < imageloop.length; i++) {
             await cloudinary.uploader.upload(imageloop[i].path, (err, result) => {
                 array.push(result);
