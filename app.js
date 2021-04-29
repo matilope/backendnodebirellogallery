@@ -28,13 +28,13 @@ app.use((req, res, next) => {
     next();
 });
 
-var whitelist = ['http://birellogallery.com', 'https://birellogallery.com', 'http://www.birellogallery.com', 'https://www.birellogallery.com', 'http://localhost:4200', 'http://localhost:4000', 'http://localhost:3000' ];
+var whitelist = ['http://birellogallery.com', 'https://birellogallery.com', 'http://www.birellogallery.com', 'https://www.birellogallery.com' ];
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
-      callback(null, true)
+      callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'))
+      callback(new Error('Not allowed by CORS'));
     }
   }
 }
