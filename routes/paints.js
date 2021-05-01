@@ -20,7 +20,7 @@ function verifyToken(req, res, next) {
     return res.status(401).send('Unauthorized request')
   }
   req.userId = payload.subject
-  next()
+  next();
 }
 
 // Rutas para pinturas
