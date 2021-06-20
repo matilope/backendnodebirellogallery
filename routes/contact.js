@@ -2,11 +2,20 @@ var express = require("express");
 var router = express.Router();
 const validator = require("validator");
 const nodemailer = require("nodemailer");
+const rateLimit = require("express-rate-limit");
 
+// Limit request on form
+
+const accountLimiter = rateLimit({
+  windowMs: 60 * 60 * 24000, // 24 hour window
+  max: 3, // start blocking after 5 requests
+  message:
+    "We received too many contacts forms from this IP, please try again after an hour"
+});
 
 // Contact section
 
-router.post("/formulario", (req, res) => {
+router.post("/formulario", accountLimiter, (req, res) => {
 
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
