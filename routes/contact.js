@@ -8,7 +8,7 @@ const rateLimit = require("express-rate-limit");
 
 const accountLimiter = rateLimit({
   windowMs: 60 * 60 * 24000, // 24 hour window
-  max: 3, // start blocking after 5 requests
+  max: 3, // start blocking after 3 requests
   message:
     "We received too many contacts forms from this IP, please try again after an hour"
 });
