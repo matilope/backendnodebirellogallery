@@ -7,10 +7,10 @@ const rateLimit = require("express-rate-limit");
 // Limit request on form
 
 const accountLimiter = rateLimit({
-  windowMs: 60 * 60 * 24000, // 24 hour window
+  windowMs: 60 * 60 * 24000, // 24 hour windowm
   max: 3, // start blocking after 3 requests
   message:
-    "We received too many contacts forms from this IP, please try again after an hour"
+    "We received too many forms from this IP, please try again after an hour"
 });
 
 // Contact section
@@ -23,7 +23,7 @@ router.post("/formulario", accountLimiter, (req, res) => {
       secure: true,
       auth: {
         user: 'birelloignacio@gmail.com',
-        pass: 'wylbraiodkauturz'
+        pass: 'mpuxmaqsbrfulfur'
       }
     });
 
