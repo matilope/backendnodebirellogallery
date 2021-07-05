@@ -4,7 +4,7 @@ var Pintura = require('../models/paints');
 
 var cloudinary = require("cloudinary").v2;
 
-cloudinary.config({ cloud_name: 'hpvfpmikj', api_key: '465624419968993', api_secret: 'MysoeF7TCI41WHCaE5bpPmthM9E' });
+cloudinary.config({ cloud_name: '******', api_key: '*********', api_secret: '*******************' });
 
 
 var controller = {
