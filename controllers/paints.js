@@ -251,9 +251,7 @@ var controller = {
         var imageloop = [];
 
         if (req.files) {
-            // loops over req.files
             Object.keys(req.files).map(key => {
-                // check if the key name includes the substring "file"
                 if (req.files[key] !== undefined && key.includes('file')) {
                     imageloop.push(req.files[key]);
                 }
@@ -269,7 +267,6 @@ var controller = {
         }
 
         if (pinturaId) {
-            // you forgot the "await" here
             await Pintura.findOneAndUpdate({ _id: pinturaId }, { new: true }, (err, paintUpdated) => {
 
                 if (err || !paintUpdated) {
